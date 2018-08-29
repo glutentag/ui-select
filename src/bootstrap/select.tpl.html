@@ -9,7 +9,8 @@
          ng-class="{ 'ui-select-search-hidden' : !$select.searchEnabled }"
          placeholder="{{$select.placeholder}}"
          ng-model="$select.search"
-         ng-show="$select.open">
+         ng-show="$select.open"
+         ng-trim="{{ $select.trim }}">
   <div ng-show="$select.open && $select.items.length > 0" class="ui-select-dropdown dropdown-menu">
     <div class="ui-select-header"></div>
     <div class="ui-select-choices"></div>

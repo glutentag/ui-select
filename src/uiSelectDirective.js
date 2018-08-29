@@ -160,6 +160,10 @@ uis.directive('uiSelect',
           $select.spinnerClass = spinnerClass !== undefined ? attrs.spinnerClass : uiSelectConfig.spinnerClass;
         });
 
+        scope.$watch(function () { return scope.$eval(attrs.trim); }, function(newVal) {
+          $select.trim = newVal !== undefined ? newVal : uiSelectConfig.trim;
+        });
+
         //Automatically gets focus when loaded
         if (angular.isDefined(attrs.autofocus)){
           $timeout(function(){
